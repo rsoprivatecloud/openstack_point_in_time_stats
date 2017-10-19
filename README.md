@@ -12,7 +12,7 @@ Partial output follows:
     RAM:
       Phys Size    : 251GB
       Virt Size    : 251GB (1.0 ratio)
-      Used         : 0GB (0%)
+      Allocated    : 0GB (0%)
       Free         : 251GB
     
     Disk:
@@ -24,7 +24,7 @@ Partial output follows:
     CPU:
       Phys Threads : 24
       Virt CPUs    : 48 (2.0 ratio)
-      Used vCPUs   : 0 (0%)
+      Allocated    : 0 (0%)
       Free vCPUs   : 48
     
     Instances      : 0
@@ -50,7 +50,7 @@ Partial output follows:
     CPU:
       Phys Threads : 288
       Total vCPUs  : 576.0 (2.0 ratio)
-      Used vCPUs   : 206 (30%)
+      Allocated    : 206 (30%)
       Avg per Host : 17
     
     Instances:
