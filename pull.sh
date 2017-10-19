@@ -96,8 +96,8 @@ Hostname       : ${node_name}
 RAM:
   Phys Size    : ${node_phys_ram_gb}GB
   Virt Size    : ${node_virt_ram_gb}GB ($ram_alloc_ratio ratio)
-  Used         : ${node_used_ram_gb}GB (${node_perc_ram}%)
-  Free         : ${node_free_ram_gb}GB
+  Allocated    : ${node_used_ram_gb}GB (${node_perc_ram}%)
+  Available    : ${node_free_ram_gb}GB
 
 Disk:
   Phys Size    : ${node_phys_disk_gb}GB
@@ -108,8 +108,8 @@ Disk:
 CPU:
   Phys Threads : ${node_cpu}
   Virt CPUs    : ${node_vcpu} ($cpu_alloc_ratio ratio)
-  Used vCPUs   : ${node_used_vcpu} (${node_perc_cpu}%)
-  Free vCPUs   : $( echo $node_vcpu $node_used_vcpu - p | dc | cut -d. -f1 )
+  Allocated    : ${node_used_vcpu} (${node_perc_cpu}%)
+  Available    : $( echo $node_vcpu $node_used_vcpu - p | dc | cut -d. -f1 )
 
 Instances      : ${node_vms}
 
@@ -139,7 +139,7 @@ Disk:
 CPU:
   Phys Threads : ${total_cpu}
   Total vCPUs  : ${total_vcpu} ($cpu_alloc_ratio ratio)
-  Used vCPUs   : ${used_vcpu} (${perc_cpu}%)
+  Allocated    : ${used_vcpu} (${perc_cpu}%)
   Avg per Host : ${average_vcpu}
 
 Instances:
