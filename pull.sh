@@ -53,7 +53,7 @@ function set_totals () {
 	available_disk_gb=$(echo 1 k $total_disk_gb $disk_alloc_ratio \* $used_disk_gb - p | dc | cut -d. -f1)
 
 	total_cpu=$(awk 'BEGIN {t=0; for (i in ARGV) t+=ARGV[i]; print t}' "${arr_total_cpu[@]}")
-	total_vcpu=$(echo $total_cpu $cpu_alloc_ratio \* p | dc )
+	total_vcpu=$(echo $total_cpu $cpu_alloc_ratio \* p | dc  | cut -d. -f1)
 	used_vcpu=$(awk 'BEGIN {t=0; for (i in ARGV) t+=ARGV[i]; print t}' "${arr_used_vcpu[@]}")
 	average_vcpu=$((used_vcpu / compute_nodes))
 	perc_cpu=$(echo 1 k $used_vcpu $total_vcpu \/ 100 \* p | dc | cut -d. -f1)
