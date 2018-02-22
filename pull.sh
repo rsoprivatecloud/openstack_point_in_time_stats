@@ -27,7 +27,7 @@ function get_ratio () {
 	RET=$(grep ^${TYPE}_allocation_ratio /etc/nova/nova.conf 2>/dev/null | cut -d= -f2)
 
 	if [ ! "$RET"]; then
-		RET=$( lxc-attach -n `lxc-ls | grep nova_scheduler 2> /dev/null| tail -1` -- grep ^${TYPE}_allocation_ratio /etc/nova/nova.conf 2> /dev/null | cut -d= -f2)
+		RET=$(lxc-ls | tr ' ' '\n' | grep -i nova_scheduler` -- grep ^${TYPE}_allocation_ratio /etc/nova/nova.conf 2> /dev/null | cut -d= -f2)
 		if [ ! "$RET" ]; then
 			echo 1.0
 		fi
